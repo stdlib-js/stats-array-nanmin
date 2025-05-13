@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,27 +16,32 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { NumericArray, Collection, AccessorArrayLike } from '@stdlib/types/array';
 
 /**
-* Compute the minimum value of an array, ignoring `NaN` values.
+* Input array.
+*/
+type InputArray = NumericArray | Collection<number> | AccessorArrayLike<number>;
+
+/**
+* Computes the minimum value of an array, ignoring `NaN` values.
 *
-* @module @stdlib/stats-array-nanmin
+* @param x - input array
+* @returns minimum value
 *
 * @example
-* var nanmin = require( '@stdlib/stats-array-nanmin' );
-*
 * var x = [ 1.0, -2.0, NaN, 2.0 ];
 *
 * var v = nanmin( x );
 * // returns -2.0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function nanmin( x: InputArray ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = nanmin;
